@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="nav--logo">
+            <img src="image/earnwave.png" alt="" width="120px">
+        </div>
+        <div id="nav--link">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">For Bussiness</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div id="nav--button">
+            <button>Sign up</button>
+        </div>
+    </header>
+    <section>
+        <div class="text">
+            <h1>Connect. Learn. Earn</h1>
+            <p>Your data is a profitable asset. With Earwave you control what data to share</p>
+            <p>anonymously and earn from it.</p>
+        </div>
+    </section>
+
+
+    <div class="carousel-container">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="image/img1.jpg" alt="">
+            </div>
+            <div class="carousel-slide active">
+                <img src="image/img2.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="image/img3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+      <script>
+     const slides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.indicator');
+const track = document.querySelector('.carousel-track');
+
+let currentIndex = 1; // Start sa gitna
+
+function updateCarousel(index) {
+  currentIndex = (index + slides.length) % slides.length;
+
+  // Remove active class
+  slides.forEach(slide => slide.classList.remove('active'));
+  indicators.forEach(dot => dot.classList.remove('active'));
+
+  // Add to current
+  slides[currentIndex].classList.add('active');
+  indicators[currentIndex].classList.add('active');
+
+  // Shift slides
+  const offset = (currentIndex - 1) * (230); // 200 width + 30 gap
+  track.style.transform = `translateX(-${offset}px)`;
+}
+
+// Arrow key
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') updateCarousel(currentIndex + 1);
+  if (e.key === 'ArrowLeft') updateCarousel(currentIndex - 1);
+});
+
+// Mouse drag
+let startX = 0;
+let isDragging = false;
+
+track.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.clientX;
+});
+
+track.addEventListener('mouseup', (e) => {
+  if (!isDragging) return;
+  isDragging = false;
+  const diff = e.clientX - startX;
+  if (diff > 50) updateCarousel(currentIndex - 1);
+  else if (diff < -50) updateCarousel(currentIndex + 1);
+});
+
+track.addEventListener('mouseleave', () => isDragging = false);
+
+// Click indicators
+indicators.forEach((dot, i) => {
+  dot.addEventListener('click', () => updateCarousel(i));
+});
+
+// Initial
+updateCarousel(currentIndex);
+      </script>
+      
+      
+      
+
+
+</body>
+</html>
