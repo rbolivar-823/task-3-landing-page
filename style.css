@@ -59,6 +59,16 @@ body{
     left: 63%;
     animation: animate 8s infinite;
 }
+.box div:nth-child(8){
+  top: 30%;
+  left: 10%;
+  animation: animate 10s infinite;
+}
+.box div:nth-child(9){
+  top: 90%;
+  left: 63%;
+  animation: animate 8s infinite;
+}
 @keyframes animate {
     0%{
         transform: scale(0) translateY(0) rotate(0);
@@ -221,7 +231,7 @@ animation: slide 2.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(250, 246, 246);
     box-shadow: 3px 7px 15px #e4e3e3;
     backface-visibility: hidden;
   }
@@ -257,6 +267,9 @@ animation: slide 2.5s;
       font-size: 20px;
       padding: 10px 20px;
     }
+    #nav--link ul li a{
+      font-size: 14px;
+    }
   }
 
 @media (max-width: 768px) {
@@ -265,8 +278,9 @@ animation: slide 2.5s;
       }
     
       .card {
-        width: 250px;
+        width: 200px;
         height: 250px;
+        margin: auto;
       }
     
       .card-front p,
@@ -275,16 +289,29 @@ animation: slide 2.5s;
         padding: 8px 16px;
       }
       header {
-    flex-wrap: wrap;
-    flex-direction: column;
+    
+    display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 10px;
+    margin: auto;
   }
 
   .hamburger {
     display: flex;
+    padding-top: 20px;
     margin-left: auto;
+    padding-right: 30px;
+    animation: sliders 3s;
+  }
+  @keyframes sliders {
+    0%{
+      padding-top: 0;
+    }
+    100%{
+      padding-top: 20px;
+    }
   }
 
   #nav--link,
@@ -300,10 +327,16 @@ animation: slide 2.5s;
     padding: 20px 0;
   }
 
-  /* Show nav when toggle is checked */
+  
   .nav-toggle:checked ~ #nav--link,
   .nav-toggle:checked ~ #nav--button {
     display: block;
+  }
+  .text h1{
+    font-size: 40px;
+  }
+  .text p{
+    font-size: 13px;
   }
     }
     
