@@ -246,9 +246,35 @@ animation: slide 2.5s;
     font-family: calibri;
     text-align: center;
   }
+  .card-front img,
+  .card-back img {
+    margin: auto;
+    padding-top: 30px;
+  }
   
   .card-back {
     transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .card-back button{
+    
+    padding: 20px 30px;
+    border-radius: 40px;
+    border: none;
+    background-color: #31464f;
+    color: white;
+  }
+  .img-1{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  .img-2{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
   }
   
   @media (max-width: 1024px) {
@@ -270,17 +296,29 @@ animation: slide 2.5s;
     #nav--link ul li a{
       font-size: 14px;
     }
+    .img-2{
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+    header{
+      width: 80%;
+      margin: auto;
+    }
   }
 
 @media (max-width: 768px) {
     .box--container {
         gap: 30px;
+        display: flex;
+        flex-direction: column;
       }
     
       .card {
-        width: 200px;
-        height: 250px;
+        width: 350px;
+        height: 300px;
         margin: auto;
+        
       }
     
       .card-front p,
@@ -293,7 +331,8 @@ animation: slide 2.5s;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
+    gap: 100px;
+    
     padding: 10px 10px;
     margin: auto;
   }
@@ -351,13 +390,28 @@ animation: slide 2.5s;
       .card {
         width: 90%;
         max-width: 300px;
-        height: 230px;
+        height: 300px;
+        margin: auto;
+        
       }
     
       .card-front p,
       .card-back p {
         font-size: 16px;
         padding: 6px 12px;
+      }
+      .card-back {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+      }
+      
+      .img-2{
+        gap: 50px;
+      }
+      .card-back button {
+        margin-bottom: 10px;
       }
     }
 
