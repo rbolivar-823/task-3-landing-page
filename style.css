@@ -88,7 +88,7 @@ header{
     width: 65%;
     margin: auto;
     padding: 15px;
-    border-bottom: 0.5px solid rgb(109, 109, 109);
+    border-bottom: 0.5px solid rgba(109, 109, 109, 0.574);
     
 }
 .nav-toggle {
@@ -174,15 +174,16 @@ animation: slide 2.5s;
     border: none;
     font-size: 16px;
     color: #31464f;
+    font-weight: 500;
+    font-family: sans-serif;
     background-color: white;
+    box-shadow: 5px 10px 15px #b5b5b55f;
     
 }
-#nav--button button:hover {
-    box-shadow: 5px 10px 15px #b5b5b5;
-}
+
 .text{
     
-    font-family: sans-serif;
+  font-family:  sans-serif;
     color: #31464f;
     text-align: center;
     margin: auto;
@@ -200,7 +201,7 @@ animation: slide 2.5s;
 .box--container {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 30px;
     padding: 35px 0;
   }
   
@@ -231,20 +232,22 @@ animation: slide 2.5s;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(250, 246, 246);
+    background-color: rgb(247, 247, 247);
     box-shadow: 3px 7px 15px #e4e3e3;
     backface-visibility: hidden;
+    margin: auto;
   }
   
   .card-front p,
   .card-back p {
-    background-color: #c9cdcf;
+    background-color: #f1f1f1;
     color: white;
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 22px;
     font-family: calibri;
-    text-align: center;
+    color: rgb(92, 92, 92);
+    
   }
   .card-front img,
   .card-back img {
@@ -256,11 +259,16 @@ animation: slide 2.5s;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    
+    overflow: hidden;
   }
-  .card-back button{
+  .card-front {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .card-back button, .card-front button{
     
-    padding: 20px 30px;
+    padding: 10px 20px;
     border-radius: 40px;
     border: none;
     background-color: #31464f;
@@ -274,7 +282,71 @@ animation: slide 2.5s;
   .img-2{
     display: flex;
     justify-content: center;
-    gap: 100px;
+    margin: auto;
+    
+  }
+  .overlay-1{
+    width: 375px;
+    height: 300px;
+    position: absolute;
+    top: 65%;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(255, 255, 255, 0.796);
+    
+  }
+  .overlay-2{
+    width: 375px;
+    height: 300px;
+    position: absolute;
+    top: 45%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(255, 255, 255, 0.851);
+    
+  }
+  .overlay-4{
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(255, 255, 255, 0.796);
+    
+  }
+  .overlay-5{
+    width: 120px;
+    height: 150px;
+    position: absolute;
+    top: 16%;
+    left: 15%;
+    border-radius: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(255, 255, 255, 0.796);
+    
+  }
+  .overlay-6{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 23%;
+    left: 20%;
+    border-radius: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(255, 255, 255, 0.796);
+    
   }
   
   @media (max-width: 1024px) {
@@ -298,7 +370,7 @@ animation: slide 2.5s;
     }
     .img-2{
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       gap: 50px;
     }
     header{
